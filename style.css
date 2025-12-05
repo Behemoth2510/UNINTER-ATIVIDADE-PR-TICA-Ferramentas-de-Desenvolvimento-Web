@@ -1,0 +1,268 @@
+    /* Tema Claro */
+        :root {
+            --cor-fundo: #f4f4f9;
+            --cor-principal: #a56057; 
+            --cor-secundaria: #e2520f; 
+            --cor-texto: #121314;
+            --cor-botao: #bf6d4c;
+            --cor-texto-botao:  #121314;
+            --cor-fundo-form: #657c92;
+
+        }
+
+        /* Tema Escuro */
+        .dark-mode {
+            --cor-fundo: #1a202c;
+            --cor-principal:  #a56057;
+            --cor-secundaria: #e2520f;
+            --cor-texto: #e2e8f0;
+            --cor-botao: #bf6d4c;
+            --cor-texto-botao: #121314;
+        }
+
+        /* Reset e Tipografia */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            transition: background-color 0.3s, color 0.3s;
+            line-height: 1.6;
+        }
+
+        /* Estilo do Cabeçalho e Menu */
+        header {
+            background-color: var(--cor-principal);
+            color: var(--cor-texto-botao);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(138, 9, 9, 0.623);
+            position:static; 
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .menu-links a {
+            color: var(--cor-texto-botao);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            padding: 0.5rem 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .menu-links a:hover, .menu-links a.active {
+            background-color: var(--cor-secundaria);
+        }
+        
+        /* Botão de Tema */
+        #theme-toggle {
+            background-color: var(--cor-secundaria);
+            color: var(--cor-texto-botao);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            font-weight: 600;
+        }
+
+        #theme-toggle:hover {
+            background-color: var(--cor-principal);
+        }
+
+        /* Conteúdo Principal */
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background-color: var(--cor-fundo-card);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(185, 180, 180, 0.1);
+            display: none; 
+        }
+
+        h1, h2 {
+            color: var(--cor-secundaria);
+            border-bottom: 2px solid var(--cor-borda);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        /* Estilos do Formulário de Contato */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--cor-borda);
+            border-radius: 4px;
+            background-color: var(--cor-fundo-form);
+            color: var(--cor-texto);
+            box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--cor-secundaria);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 81, 191, 0.2);
+        }
+
+        /* Botão de Envio do Formulário */
+        #btn-enviar {
+            background-color: var(--cor-botao);
+            color: var(--cor-texto-botao);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        #btn-enviar:hover {
+            background-color: #3f46ad; /* Tom mais escuro */
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        /* Estilo do Modal de Confirmação */
+        .modal {
+            display: none; /* Oculto por padrão */
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4); /* Fundo semi-transparente */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--cor-fundo-card);
+            margin: 15% auto; 
+            padding: 20px;
+            border: 1px solid var(--cor-borda);
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--cor-texto);
+        }
+
+        .close-button {
+            background-color: var(--cor-secundaria);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+        
+        .close-button:hover {
+            background-color: var(--cor-principal);
+        }
+
+        /* Estilos Portfólio */
+        .portfolio-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .portfolio-list li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--cor-borda);
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .portfolio-list li:hover {
+            background-color: rgba(76, 81, 191, 0.1);
+        }
+
+        .portfolio-list a {
+            color: var(--cor-secundaria);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Media Queries para Responsividade Básica (Dispositivos Móveis) */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-links {
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .menu-links a {
+                margin-left: 0;
+                margin-bottom: 0.5rem;
+                text-align: center;
+                width: 100%;
+            }
+            
+            #theme-toggle {
+                margin-top: 0.5rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+        }
